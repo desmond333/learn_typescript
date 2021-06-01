@@ -1,0 +1,114 @@
+@import '../../../../styles/variables.scss';
+
+.task {
+  display: grid;
+  grid-template-columns: 1fr 7fr 1.5fr;
+  height: 65px;
+  box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.15), 0 10px 32px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  border-radius: 0 20px;
+  transition: all 0.6s linear 0s;
+
+  .task__checkboxArea {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+
+    .task__checkboxOther {
+      display: block;
+      line-height: 22px;
+    }
+
+    .task__checkboxOther .task__customCheckbox {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      vertical-align: top;
+      outline: none;
+      transition: 0.3s ease;
+      background: url('./checkBox1.png') no-repeat;
+      background-size: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .task__description {
+    display: grid;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 1px;
+    align-content: center;
+    text-align: left;
+  }
+
+  .task__btnDelete {
+    background-color: rgb(236, 41, 51);
+    height: 100%;
+    width: 100%;
+    border-radius: 0 20px;
+    border: none;
+    padding: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .task__btnDelete:active {
+    font-size: 12px;
+  }
+}
+
+.task.taskСompleted {
+  margin-left: 10px;
+  width: 740px;
+  opacity: 0.5;
+  background: rgb(151, 151, 151);
+  box-shadow: none;
+  transition: all 0.6s linear 0s;
+
+  .task__checkboxOther .task__customCheckbox {
+    background: url('./checkBox2.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .task__description {
+    text-decoration: line-through;
+    font-size: 18px;
+  }
+}
+
+.task.taskRemote {
+  animation: opacity 2s linear;
+}
+
+//animations
+@keyframes opacity {
+  from {
+    display: block;
+    background-image: linear-gradient(
+      to left,
+      transparent,
+      transparent 50%,
+      rgb(236, 41, 51) 50%,
+      rgb(236, 41, 51)
+    );
+    background-position: -100% 0;
+    background-size: 200% 100%;
+  }
+
+  to {
+    background-position: 100% 0;
+    display: none;
+  }
+}
+

@@ -1,11 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import {App} from './components/App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+
+import { Provider } from 'react-redux';
+
+import App from '../src/App';
+import { store } from '../src/store/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      {/*Использует контекст апи, чтобы в контекст засунуть store*/}
+      <App />
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
-);
+  document.getElementById('root'),
+)

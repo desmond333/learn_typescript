@@ -1,0 +1,51 @@
+@import '../../../styles/variables.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 10vh;
+  margin-bottom: 10vh;
+  background: $primary-color;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.15);
+  background-size: cover;
+  text-align: center;
+  width: 100vw;
+  padding: 0 10px 0 10px;
+}
+
+.header__mainTitle {
+  color: $font-color;
+  font-family: 'Cookie', cursive;
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .header__mainTitle {
+    font-size: 32px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .header {
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.15);
+  }
+  .header__mainTitle {
+    font-size: 25px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .header {
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.15);
+  }
+  .header__mainTitle {
+    font-size: 20px;
+  }
+}
