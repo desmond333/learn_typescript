@@ -1,8 +1,0 @@
-const AT = {
-  ADD_TASK: 'ADD_TASK',
-  COMPLETE_TASK: 'COMPLETE_TASK',
-  DELETE_TASK: 'DELETE_TASK',
-  SORT_TASKS: 'SORT_TASKS',
-}
-
-export default AT

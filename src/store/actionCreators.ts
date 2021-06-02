@@ -1,29 +1,18 @@
-import AT from './constants'
+import {tasksReducerATType, addTaskAC, completeTaskAC, deleteTaskAC, sortTasksAC } from '../types/tasksReducerActionTypes'
 
-export type actionTypes = addTaskType | completeTaskType | deleteTaskType | sortTasksType
-
-type addTaskType = {
-  type: typeof AT.ADD_TASK
-  description: string
-}
-export const addTask = (description: string): addTaskType => ({ type: AT.ADD_TASK, description })
-
-type completeTaskType = {
-  type: typeof AT.COMPLETE_TASK
-  taskId: number
-}
-export const completeTask = (taskId: number): completeTaskType => ({
-  type: AT.COMPLETE_TASK,
-  taskId,
+export const addTask = (description: string): addTaskAC => ({
+  type: tasksReducerATType.ADD_TASK,
+  description,
 })
 
-type deleteTaskType = {
-  type: typeof AT.DELETE_TASK
-  taskId: number
-}
-export const deleteTask = (taskId: number): deleteTaskType => ({ type: AT.DELETE_TASK, taskId })
+export const completeTask = (taskID: number): completeTaskAC => ({
+  type: tasksReducerATType.COMPLETE_TASK,
+  taskID,
+})
 
-type sortTasksType = {
-  type: typeof AT.SORT_TASKS
-}
-export const sortTasks = (): sortTasksType => ({ type: AT.SORT_TASKS })
+export const deleteTask = (taskID: number): deleteTaskAC => ({
+  type: tasksReducerATType.DELETE_TASK,
+  taskID,
+})
+
+export const sortTasks = (): sortTasksAC => ({ type: tasksReducerATType.SORT_TASKS })

@@ -8,7 +8,7 @@ const OneTask = (props) => {
   const dispatch = useDispatch()
 
   //выполняется при выполнении задачи
-  const completeTask = () => {
+  const completeTaskOnClick = () => {
     taskRef.current.classList.toggle(`${styles.taskСompleted}`)
     dispatch(completeTask(props.index))
     //после выполнения анимации передвигаем выполненные задачи в конец
@@ -18,7 +18,7 @@ const OneTask = (props) => {
   }
 
   //выполняется при удалении задачи
-  const deleteTask = () => {
+  const deleteTaskOnClick = () => {
     console.log(styles)
     taskRef.current.classList.add(`${styles.taskRemote}`)
     setTimeout(() => {
@@ -31,14 +31,14 @@ const OneTask = (props) => {
       className={`${styles.task} ${props.task.completed ? styles.taskСompleted : ''}`}
       ref={taskRef}>
       <div className={styles.task__checkboxArea}>
-        <label className={styles.task__checkboxOther} onClick={completeTask}>
+        <label className={styles.task__checkboxOther} onClick={completeTaskOnClick}>
           <input className={styles.task__customCheckbox} type="checkbox" />
         </label>
       </div>
 
       <div className={styles.task__description}>{props.task.description}</div>
 
-      <button className={styles.task__btnDelete} onClick={deleteTask}>
+      <button className={styles.task__btnDelete} onClick={deleteTaskOnClick}>
         удалить
       </button>
     </div>

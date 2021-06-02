@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 const AddToDoTask = () => {
   const inputEl = useRef()
   const dispatch = useDispatch()
-  const addTask = () => {
+  const addTaskOnClick = () => {
     dispatch(addTask(inputEl.current.value))
     inputEl.current.value = ''
   }
@@ -23,7 +23,7 @@ const AddToDoTask = () => {
           />
         </div>
         <div className={styles.addToDoArea__buttonWrapper}>
-          <button className={styles.addTask} onClick={addTask}>
+          <button className={styles.addTask} onClick={addTaskOnClick}>
             add
           </button>
         </div>

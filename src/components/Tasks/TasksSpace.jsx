@@ -10,7 +10,7 @@ const TasksSpace = (props) => {
       <div className={styles.tasksArea}>
         <span className={styles.tasksArea__title}>Список дел:</span>
         <div className={styles.tasksArea__toDoTaskWrapper}>
-          {allTasks != undefined &&
+          {allTasks !== undefined &&
             allTasks.map((task, index) => (
               <OneTask key={`${task.description}_${index}`} index={index} task={task} />
             ))}
