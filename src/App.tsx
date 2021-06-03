@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, AddToDoTask, TasksSpace } from './components';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="app">
       <Header />

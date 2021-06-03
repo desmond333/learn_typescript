@@ -4,8 +4,10 @@ import logger from 'redux-logger';
 
 import tasksReducer from "./tasksReducer"
 
-const reducers = combineReducers({ //смешиваем все reducer с помощью f combineReducers
+const rootReducer = combineReducers({ //смешиваем все reducer с помощью f combineReducers
     tasks: tasksReducer,
 })
+//для адекватной работы useSelector в компоненте
+export type rootReducerType = ReturnType<typeof rootReducer>
 
-export const store = createStore(reducers, applyMiddleware(logger));
+export const store = createStore(rootReducer, applyMiddleware(logger));

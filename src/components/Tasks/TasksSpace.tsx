@@ -1,9 +1,9 @@
-import styles from './TasksSpace.module.scss';
-import OneTask from './OneTask/OneTask';
-import { useSelector } from 'react-redux';
+import styles from './TasksSpace.module.scss'
+import OneTask from './OneTask/OneTask'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
 
-const TasksSpace = (props) => {
-  const allTasks = useSelector((state) => state.tasks.allTasks);
+const TasksSpace: React.FC = () => {
+  const { allTasks } = useTypedSelector((state) => state.tasks)
 
   return (
     <section className={styles.container}>
@@ -17,7 +17,7 @@ const TasksSpace = (props) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default TasksSpace;
+export default TasksSpace

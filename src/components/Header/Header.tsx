@@ -1,6 +1,6 @@
 import styles from './Header.module.scss';
 
-const Header = () => {
+const Header: React.FC = () => {
    return (
       <header className={styles.header}>
          <div className={styles.header__mainTitle}>To do list with React-Redux</div>
